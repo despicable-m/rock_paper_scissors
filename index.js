@@ -49,14 +49,3 @@ function play(playerSelection, computerSelection) {
 
 console.log(game())
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Enter a selection");
-    const computerSelection = computerPlay();
-    console.log(play(playerSelection, computerSelection))
-    }
-    console.log(`Player: ${playerResult}\n Computer: ${computerResult}`)
-    if (playerResult > computerResult) return "Player wins"
-    else if (computerResult > playerResult) return "Computer wins"
-    else return "It's a tie"
-}

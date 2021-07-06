@@ -47,5 +47,20 @@ function play(playerSelection, computerSelection) {
     else return 'Error';  
 }
 
-console.log(game())
+function game(e) {
+    playerSelection = e.srcElement.id;
+    computerSelection = computerPlay();
 
+    console.log(play(playerSelection, computerSelection));
+    console.log(playerResult+"\n");
+    console.log(computerResult+"\n");
+}
+
+
+
+// const rock = document.querySelector('#rock');
+// const paper = document.querySelector('#paper');
+// const scissors = document.querySelector('#scissors');
+
+const plays = document.querySelectorAll('.play');
+plays.forEach(played => played.addEventListener('click', game));

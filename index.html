@@ -5,12 +5,17 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        <button data-selection="rock" type="submit" id="rock" class="play">Rock</button>
-        <button data-selection="paper" type="submit" id="paper" class="play">Paper</button>
-        <button data-selection="scissors" type="submit" id="scissors"
-        class="play">Scissors</button>
+        <button type="submit" id="rock" class="play">Rock</button>
+        <button type="submit" id="paper" class="play">Paper</button>
+        <button type="submit" id="scissors" class="play">Scissors</button>
         
-        
+        <div id="scores">
+            <div id="playerComputerScores">
+                <div id="playerScore"></div>
+                <div id="computerScore"></div>
+            </div>
+            <div id="winnerDeclare"></div>
+        </div>
         
         <script src="index.js"></script>
     </body>

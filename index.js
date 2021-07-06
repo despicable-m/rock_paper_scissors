@@ -47,20 +47,43 @@ function play(playerSelection, computerSelection) {
     else return 'Error';  
 }
 
+const playerScore = document.querySelector('#playerScore');
+const computerScore = document.querySelector('#computerScore');
+const winnerDeclare = document.querySelector('#winnerDeclare');
+
+
+let numOfPlay = 0;
 function game(e) {
     playerSelection = e.srcElement.id;
     computerSelection = computerPlay();
 
-    console.log(play(playerSelection, computerSelection));
-    console.log(playerResult+"\n");
-    console.log(computerResult+"\n");
+    play(playerSelection, computerSelection);
+    playerScore.textContent = `You played ${playerSelection}: ${playerResult}`;
+    computerScore.textContent = `Computer played ${computerSelection}: ${computerResult}`;
+    
+    numOfPlay+=1;
+    if (numOfPlay === 5) {
+        showResult();
+    }
+    else if (numOfPlay > 5) {
+        numOfPlay = 0;
+        playerResult = 0;
+        computerResult = 0;
+        playerScore.textContent = "";
+        computerScore.textContent = "";
+        winnerDeclare.textContent = ""; 
+    }
 }
 
-
-
-// const rock = document.querySelector('#rock');
-// const paper = document.querySelector('#paper');
-// const scissors = document.querySelector('#scissors');
+function showResult() {
+    if (playerResult < computerResult) {
+        winnerDeclare.textContent = "Computer wins!!!";
+    }
+    else if (playerResult > computerResult) {
+        winnerDeclare.textContent = "You win!!!";
+    }
+    else winnerDeclare.textContent = "It's a draw."
+}
 
 const plays = document.querySelectorAll('.play');
 plays.forEach(played => played.addEventListener('click', game));

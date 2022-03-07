@@ -52,7 +52,6 @@ const computerScore = document.querySelector('#computerScore');
 const winnerDeclare = document.querySelector('#winnerDeclare');
 
 
-let numOfPlay = 0;
 function game(e) {
     playerSelection = e.srcElement.id;
     computerSelection = computerPlay();
@@ -61,28 +60,23 @@ function game(e) {
     playerScore.textContent = `You played ${playerSelection}: ${playerResult}`;
     computerScore.textContent = `Computer played ${computerSelection}: ${computerResult}`;
     
-    numOfPlay+=1;
-    if (numOfPlay === 5) {
-        showResult();
-    }
-    else if (numOfPlay > 5) {
-        numOfPlay = 0;
-        playerResult = 0;
-        computerResult = 0;
+    if (computerResult === 5 || playerResult === 5) {
         playerScore.textContent = "";
         computerScore.textContent = "";
-        winnerDeclare.textContent = ""; 
+        showResult();
+        playerResult = 0;
+        computerResult = 0;
     }
 }
 
 function showResult() {
     if (playerResult < computerResult) {
-        winnerDeclare.textContent = "Computer wins!!!";
+        winnerDeclare.textContent = `Computer wins!!! ${playerResult} - ${computerResult}`;
     }
     else if (playerResult > computerResult) {
-        winnerDeclare.textContent = "You win!!!";
+        winnerDeclare.textContent = `You win!!! ${playerResult} - ${computerResult}`;
     }
-    else winnerDeclare.textContent = "It's a draw."
+    else winnerDeclare.textContent = `It's a draw. ${playerResult} - ${computerResult}`
 }
 
 const plays = document.querySelectorAll('.play');

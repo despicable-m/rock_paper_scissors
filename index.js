@@ -57,8 +57,8 @@ function game(e) {
     computerSelection = computerPlay();
 
     play(playerSelection, computerSelection);
-    playerScore.textContent = `You played ${playerSelection}: ${playerResult}`;
-    computerScore.textContent = `Computer played ${computerSelection}: ${computerResult}`;
+    playerScore.textContent = `${playerResult}`;
+    computerScore.textContent = `${computerResult}`;
     
     if (computerResult === 5 || playerResult === 5) {
         playerScore.textContent = "";

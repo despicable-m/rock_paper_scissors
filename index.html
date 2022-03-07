@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <button type="submit" id="rock" class="play">Rock</button>
-        <button type="submit" id="paper" class="play">Paper</button>
-        <button type="submit" id="scissors" class="play">Scissors</button>
-        
-        <div id="scores">
-            <div id="playerComputerScores">
-                <div id="playerScore"></div>
-                <div id="computerScore"></div>
-            </div>
-            <div id="winnerDeclare"></div>
-        </div>
+        <header class="header">
+            ROCK PAPER SCISSORS
+        </header>
+        <main>
+            <section id="scores">
+                <div id="playerComputerScores">
+                    <div class="gamescore">
+                        <div class="player">
+                            <h1>Player</h1>
+                            <div id="playerScore">0</div>                            
+                        </div>
+                        <div class="computer">
+                            <h1>Computer</h1>
+                            <div id="computerScore">0</div>                                   
+                        </div>
+                 
+                    </div>
+
+                </div>
+                <div id="winnerDeclare"></div>
+            </section>   
+
+            <section class="plays">
+                <button type="submit" id="rock" class="play">✊</button>
+                <button type="submit" id="paper" class="play">✋</button>
+                <button type="submit" id="scissors" class="play">✌️</button>                  
+            </section>
+        </main>
+        <footer class="footer">
+            Copyright 2022
+        </footer>
+
         
         <script src="index.js"></script>
     </body>

@@ -39,6 +39,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    padding-bottom: 150px;
 }
 
 footer {
@@ -49,8 +50,18 @@ footer {
 }
 .gamescore {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    text-align: center;
+    padding-bottom: 20px;
+    color: rgb(197, 172, 172);
 }
 
 #playerScore, #computerScore {
     font-size: 100px;
+}
+
+#player, #computer {
+    font-size: 50px;
 }

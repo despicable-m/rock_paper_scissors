@@ -1,4 +1,4 @@
-let gameSelections = ["Rock", "Paper", "Scissors"]
+let gameSelections = ["rock", "paper", "scissors"]
 
 function computerPlay() {
     let selection = Math.floor(Math.random() * (gameSelections.length));
@@ -50,6 +50,8 @@ function play(playerSelection, computerSelection) {
 const playerScore = document.querySelector('#playerScore');
 const computerScore = document.querySelector('#computerScore');
 const winnerDeclare = document.querySelector('#winnerDeclare');
+const player = document.querySelector('#player');
+const computer = document.querySelector('#computer');
 
 
 function game(e) {
@@ -60,6 +62,9 @@ function game(e) {
     playerScore.textContent = `${playerResult}`;
     computerScore.textContent = `${computerResult}`;
     
+    player.textContent = `${emojify(playerSelection)}`;
+    computer.textContent = `${emojify(computerSelection)}`;
+
     if (computerResult === 5 || playerResult === 5) {
         playerScore.textContent = "";
         computerScore.textContent = "";
@@ -70,14 +75,22 @@ function game(e) {
 }
 
 function showResult() {
+    playerScore.textContent = `${playerResult}`;
+    computerScore.textContent = `${computerResult}`;
     if (playerResult < computerResult) {
-        winnerDeclare.textContent = `Computer wins!!! ${playerResult} - ${computerResult}`;
+       alert(`Computer wins!!! ${playerResult} - ${computerResult}`);
     }
     else if (playerResult > computerResult) {
-        winnerDeclare.textContent = `You win!!! ${playerResult} - ${computerResult}`;
+        alert(`You win!!! ${playerResult} - ${computerResult}`);
     }
-    else winnerDeclare.textContent = `It's a draw. ${playerResult} - ${computerResult}`
 }
 
 const plays = document.querySelectorAll('.play');
 plays.forEach(played => played.addEventListener('click', game));
+
+
+function emojify(selection){
+    if (selection === "rock") return '✊';
+    if (selection === "paper") return '✋';
+    if (selection === "scissors") return '✌️';
+}
